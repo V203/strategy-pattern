@@ -4,17 +4,18 @@ import { MartianSpaceship, NeptunianShip, LaserCannon, PlasmerCannom } from "../
 
 describe('Space firing simulation', function () {
     it('The martian space ship should default to a laser cannon', function () {
-        let theMartians = new MartianSpaceship()
+        let theMartians = new MartianSpaceship();
         let actual = theMartians.shoot();
-        let expected = "Laser cannon fired: 1 shots left\n \tZooooom Zooooom!"
+        let expected = "Laser cannon fired: 1 shots left\n \tZooooom Zooooom!";
         assert.equal(actual, expected);
+
     });
 
 
     it('The Neptunian spaceship should default to a plasma cannon', function () {
-        let neptunianShip = new NeptunianShip()
+        let neptunianShip = new NeptunianShip();
         let actual = neptunianShip.shoot();
-        let expected = "Plasmer cannon fired: 1 shots left\n \tBweeeahhm Bweeeahhm!"
+        let expected = "Plasmer cannon fired: 1 shots left\n \tBweeeahhm Bweeeahhm!";
         assert.equal(actual, expected);
     });
 
