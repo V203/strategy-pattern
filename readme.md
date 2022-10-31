@@ -14,6 +14,7 @@ For instance, a class that validates incoming data may utilize the strategy patt
 
 
 ### Advantages
+
     * You employ polymorphism in the interfaces, making it simple to switch between various algorithms (strategies) in runtime.
     * More clean code because you separate the concerns into classes (a class to each strategy).
     * Clean code because you avoid conditional-infested code (not complex).
