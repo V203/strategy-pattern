@@ -1,109 +1,28 @@
-interface Icannon {
-    fireCannon():string;
-    ammo:number;
-    
- 
-}
+import { MartianSpaceship } from "./MartianSpaceship";
 
-export class LaserCannon implements Icannon{
-     ammo:number
-    constructor(){
-         this.ammo = 2
-    }
-    fireCannon(): string {
-        // this.ammo--
+import { NeptunianShip } from "./NeptunianShip";
 
-        if(this.ammo === 0){
-          return  `Click Click Click \n \t Reload, ammo: ${this.ammo}!`
-        }else{
-            this.ammo--
-          return  `Laser cannon fired: ${this.ammo} shots left\n \tZooooom Zooooom!`
-        }
-       
-    }
-    reload():string{
-        this.ammo = 2;
-        return `Weapon reloaded, ammo: ${this.ammo}`
-    }
-
- 
-}
-
-
-export class PlasmerCannom implements Icannon{
-    ammo:number
-    constructor(){
-         this.ammo = 2
-    }
-    fireCannon(): string {
-        
-        if(this.ammo === 0){
-            return `Click Click Click \n \t Reload, ammo: ${this.ammo}!`
-        }else{
-            this.ammo--
-            return `Plasmer cannon fired: ${this.ammo} shots left\n \tBweeeahhm Bweeeahhm!`
-        }
-        
-    }
-
-    reload():string{
-        this.ammo = 2;
-        return `Weapon reloaded, ammo: ${this.ammo}`
-    }
-
-}
+import { PlasmerCanon } from "./PlasmerCanon";
+import { LaserCanon } from "./LaserCanon";
 
 
 
-class SpaceShip { 
-    icannon:Icannon
-    constructor( icannon: Icannon){
-        // console.log(icannon.fireCannon());
-        
-        this.icannon = icannon
-    }
-    
-    setCannon( icannon: Icannon){
-        this.icannon = icannon
-    }
-    
-    shoot(){
-        return  this.icannon.fireCannon()
-    }
-    
-    reload(){
-        this.icannon.ammo  = 2
-        return `Weapon reloaded, ammo: ${this.icannon.ammo}`
-    }
-    checkAmmo(){
-        return this.icannon.ammo
-    }
 
-}
-
-export  class MartianSpaceship extends SpaceShip{
-    constructor() {
-        super(new LaserCannon())
-        
-    }
-}
-
-export  class NeptunianShip extends SpaceShip{
-    constructor(){
-        super(new  PlasmerCannom())
-    }
-}
 
 
 let martianShip = new MartianSpaceship();
-
 let neptunianShip = new NeptunianShip()
-// predatorSpaceship.setCannon(new PlasmerCannom())
-// predatorSpaceship.shoot()
+
+console.log(neptunianShip.shoot());// The NeptunianShip shoots and is left with round of ammo Plasma cannon.
+
+console.log(martianShip.shoot());//The martianShip shoots and is left with round of Laser cannon ammo.
+
 neptunianShip.shoot();
+console.log(neptunianShip.shoot());//The NeptunianShip shoots and click click no ammo for fire
+
+console.log(neptunianShip.reload()) //NeptunianShip reloaded;
+neptunianShip.setCannon(new LaserCanon());//Neptunianship now fires with a laser canon
+martianShip.setCannon(new PlasmerCanon());////MartianShip now fires with a laser canon
+
 neptunianShip.shoot();
-neptunianShip.shoot();
-neptunianShip.shoot();
-neptunianShip.reload();
-neptunianShip.shoot();
-console.log(neptunianShip.shoot());
+
