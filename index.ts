@@ -1,7 +1,5 @@
 import { MartianSpaceship } from "./MartianSpaceship";
-
 import { NeptunianShip } from "./NeptunianShip";
-
 import { PlasmerCanon } from "./PlasmerCanon";
 import { LaserCanon } from "./LaserCanon";
 
